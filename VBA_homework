@@ -1,0 +1,36 @@
+Sub alpha_tester()
+   ' Set an initial variable for holding the volume
+  Dim Vol As String
+   ' Set an initial variable for holding the total per stock Vol
+  Dim Vol_Total As Double
+  Vol_Total = 0
+   ' Keep track of the location for each stock Vol in the summary table
+  Dim Summary_Table_Row As Double
+  Summary_Table_Row = 2
+  lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+  
+   ' Loop through all stock purchases
+  For i = 2 To lastrow
+     ' Check if we are still within the same stock Vol, if it is not...
+    If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
+       ' Set the Vol name
+      Vol_Name = Cells(i, 1).Value
+       ' Add to the Vol Total
+      Vol_Total = Vol_Total + Cells(i, 7).Value
+       ' Print the stock Vol in the Summary Table
+      Range("J" & Summary_Table_Row).Value = Vol_Name
+       ' Print the Vol Amount to the Summary Table
+      Range("K" & Summary_Table_Row).Value = Vol_Total
+       ' Add one to the summary table row
+      Summary_Table_Row = Summary_Table_Row + 1
+      
+      ' Reset the Vol Total
+      Vol_Total = 0
+     ' If the cell immediately following a row is the same Vol...
+    Else
+       ' Add to the Vol Total
+      Vol_Total = Vol_Total + Cells(i, 7).Value
+     End If
+   Next i
+ End Sub
+

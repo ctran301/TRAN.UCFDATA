@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+   <!--name of website(left of nav bar)-->
+  <title>Latitudes </title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<!--_____HOMEPAGE_____-->
+
+    <!--EXPLANATION OF PROJECT-->
+
+    <!--Nav Bar-->
+    <body>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <!--<a class="navbar-brand" href="./HTML_homework.html">Latitude</a>-->
+
+                <a class="navbar-brand" href="./HTML_homework.html"><span class="latitude">Latitude</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls=" navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+              </div>
+          
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <!--dropdown menu: links each visualization page (right of nav bar) named "Plots"-->      
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown-toggle">
+                    
+                        <button class = "btn btn-primary dropdown-toggle" type="button" id = "dropdownMenu1" data-toggle = "dropdown">
+                                Plots
+                                <span class = "caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                                <li><a href="./MaxTemp.html">Max Temperture</a></li>
+                                <li><a href="./Humidity.html">Humidity</a></li>
+                                <li><a href="./Cloudiness.html">Cloudiness</a></li>
+                                <li><a href="./Wind_Speed.html">Wind Speed</a></li>
+                    
+                  </li>
+                </ul>
+                <!--2 more links on right for 'Comparisions' and 'Data'-->
+                <li><a href="./Comparison_all_4.html">Comparisons</a></li>
+                <li><a href="./DATA.html">Data</a></li>
+             
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+        <!--Header for the graphs-->
+        <div class="page-header">
+                <h1>Latitude vs. X</h1>                                           
+            </div>
+        <!--Provide graphs and space with grid-->
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p><em>vs. Temperture</em></p>
+                        <article>
+                        <hr>
+                        </article>
+                        <a target="_blank" href="Resources/assets/images/1_Temperture.png">
+                        <img src="Resources/assets/images/1_Temperture.png" alt="Temperture Map">
+                        </a>
+                    </div>
+                                       
+                    </div>
+                </div>
+            </div>
+
+      
+      </body>
+      
+
+</html>

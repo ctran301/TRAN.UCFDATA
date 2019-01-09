@@ -1,50 +1,41 @@
 // from data.js
-var tableData = data;
-console.log(tableData);
+const tableData = data;
 
 //Find the table body and reference it
-var tbody = d3.select("tbody");
+const tbody = d3.select("tbody");
 
-//Console Log 
-tableData.forEach(function(sightingReport){
-    console.log(sightingReport);
-    var row = tbody.append("tr");
-        Object.entries(sightingReport).forEach(function([key, value]) {
-                console.log(key,value);
-                var cell = tbody.append("td");
-                cell.text(value);
-        });
+// Select Submit button
+const submit = d3.select("#filter-btn"); 
+
+// Complete the clicker handler for the form
+submit.on("click", function() {
+
+  //prevents page from refreshing
+  d3.event.preventDefault(); 
+
+  //select input element and get raw html node
+  var inputElement = d3.select("#datetime");
+
+  //Get the value of the input element
+  var inputValue = inputElement.property("value");
+
+  console.log(inputValue);
+  console.log(tableData);
+
+  //create filter by datetime
+  var filteredData = tableData.filter(sighting => sighting.datetime ===inputValue);
     
-});
+  console.log(filteredData);
 
-
-var filter = d3.select("#filter table");
-
- // function to take input and recreate table
- filter.on("click", function() {
-   // stops page from refreshing
-   d3.event.preventDefault();
- 
-   d3.select(".summary").html("");
- 
-   // user input as variable
-   var inputElement = d3.select("#datetime");
-   var inputValue = inputElement.property("value");
- 
-   // Filter Data
-   var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
- 
-   // loop through
-   filteredData.forEach((dateData) => {
-     var row = tbody.append("tr");
-     Object.entries(dateData).forEach(([key, value]) => {
-       var cell = tbody.append("td");
-       cell.text(value);
-     });
-   });
- });
-
-dateInput.on("change", clickSelect);
-
-
-//508875699
+  filteredData.forEach((input_date) => {
+      var row = tbody.append("tr");
+      Object.entries(input_date).forEach(function([key, value]){
+      
+        var cell = tbody.append('td');
+        cell.text(value);
+        
+      }
+      )
+    }
+  )
+})

@@ -34,8 +34,7 @@ submit.on("click", function() {
         var cell = tbody.append('td');
         cell.text(value);
         
-      }
-      )
-    }
-  )
-})
+      });
+    });
+});
+

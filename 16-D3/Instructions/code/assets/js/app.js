@@ -55,6 +55,7 @@ function makeResponsive() {
     });
 };
 
+
 //Scatter plot (healthcare vs poverty)
 
 //Set dimensions for svg element

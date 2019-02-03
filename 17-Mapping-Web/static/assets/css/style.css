@@ -1,0 +1,13 @@
+
+
+html, body, #map-id{
+    height: 100%;
+    width: 100%;
+    
+}
+
+.infoHeader {
+    color:white;
+    font-size: 20px;
+}
+

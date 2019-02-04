@@ -38,10 +38,13 @@ function quakeData (feature, layer) {
   layer.bindPopup("<h1 class='infoHeader'> I'm an info window</h1><p class='infoHeader'>" + 
   feature.properties.place + "</p>");
   layer.setIcon(myIcon);
+
+
 };
 
 L.geoJson(markers, {
   onEachFeature: quakeData
+
 
 }).addTo(map);
 
@@ -54,15 +57,7 @@ map.addLayer( markerClusters );
 
 
 
-// for ( var i = 0; i < featureInfo.length; ++i )
-// {
-//     var popup = featureInfo[i].properties.title +
-//             '<br/><b>Time</b>' + featureInfo[i].properties.time +
-//             '<br/><b>Magnitude</b> ' + featureInfo[i].properties.mag+
-//             '<br/><b>URL: </b>' + featureInfo[i].properites.url;
 
-// var m = L.marker( [featureInfo[i].lat, featureInfo[i].lng], {icon: myIcon} )
-//                 .bindPopup( popup );
 
 // markerClusters.addLayer( m );
 // }
